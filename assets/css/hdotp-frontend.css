@@ -1,0 +1,27 @@
+.hdotp-login-block {
+    margin: 1.5em 0;
+    padding-top: 1em;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.hdotp-toggle a {
+    font-size: 0.95em;
+}
+
+.hdotp-request-form label,
+.hdotp-verify-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25em;
+}
+
+.hdotp-request-form input,
+.hdotp-verify-form input {
+    width: 100%;
+    max-width: 260px;
+}
+
+.hdotp-sent-notice {
+    opacity: 0.8;
+    font-size: 0.9em;
+}
