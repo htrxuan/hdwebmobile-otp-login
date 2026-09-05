@@ -1,27 +1,49 @@
 .hdotp-login-block {
     margin: 1.5em 0;
-    padding-top: 1em;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.hdotp-toggle {
+    margin: 0 0 1em;
 }
 
 .hdotp-toggle a {
     font-size: 0.95em;
 }
 
+.hdotp-request-form,
+.hdotp-verify-form {
+    margin-top: 1em;
+}
+
+.hdotp-request-form p,
+.hdotp-verify-form p {
+    margin: 0 0 1em;
+}
+
 .hdotp-request-form label,
 .hdotp-verify-form label {
     display: block;
     font-weight: 600;
-    margin-bottom: 0.25em;
+    margin-bottom: 0.4em;
 }
 
 .hdotp-request-form input,
 .hdotp-verify-form input {
+    display: block;
     width: 100%;
-    max-width: 260px;
+    max-width: 280px;
+    padding: 0.5em 0.65em;
+    font-size: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .hdotp-sent-notice {
     opacity: 0.8;
     font-size: 0.9em;
+    margin-bottom: 1em;
 }

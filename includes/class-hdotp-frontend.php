@@ -29,7 +29,11 @@ final class HDOTP_Frontend
 
     private function __construct()
     {
-        add_action('woocommerce_login_form_end', array($this, 'render_toggle_and_form'));
+        // Deliberately woocommerce_after_customer_login_form, not woocommerce_login_form_end
+        // -- the latter fires INSIDE the classic login <form>, and browsers silently drop a
+        // nested <form> tag (HTML doesn't allow one), which splices this form's fields
+        // straight into the surrounding login form instead of keeping them in their own.
+        add_action('woocommerce_after_customer_login_form', array($this, 'render_toggle_and_form'));
         add_action('template_redirect', array($this, 'handle_submission'));
         add_action('wp_enqueue_scripts', array($this, 'maybe_enqueue_assets'));
     }
@@ -81,7 +85,7 @@ final class HDOTP_Frontend
             '<p><label for="hdotp_email">%s</label><input type="email" id="hdotp_email" name="hdotp_email" required /></p>',
             esc_html__('Your email', 'hdwebmobile-otp-login')
         );
-        echo '<button type="submit" class="button">' . esc_html__('Send code', 'hdwebmobile-otp-login') . '</button>';
+        echo '<button type="submit" class="woocommerce-button button wp-element-button">' . esc_html__('Send code', 'hdwebmobile-otp-login') . '</button>';
         echo '</form>';
     }
 
@@ -96,7 +100,7 @@ final class HDOTP_Frontend
             '<p><label for="hdotp_code">%s</label><input type="text" id="hdotp_code" name="hdotp_code" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="one-time-code" required /></p>',
             esc_html__('6-digit code', 'hdwebmobile-otp-login')
         );
-        echo '<button type="submit" class="button">' . esc_html__('Verify and log in', 'hdwebmobile-otp-login') . '</button>';
+        echo '<button type="submit" class="woocommerce-button button wp-element-button">' . esc_html__('Verify and log in', 'hdwebmobile-otp-login') . '</button>';
         echo '</form>';
     }
 
