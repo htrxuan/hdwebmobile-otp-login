@@ -16,8 +16,8 @@ Passwordless email one-time-code login for WooCommerce. A session is only ever c
 
 HDWebmobile OTP Login adds a "Log in with a one-time code" option next to the normal password login on your My Account page. A customer enters their email, receives a 6-digit code, and enters it to log in -- creating an account automatically if they don't have one yet. It's an addition to the existing password login, not a replacement.
 
-= Why this plugin exists =
-A competing "OTP Login for WooCommerce" plugin had a critical authentication bypass (CVE-2026-12492): its login handler never actually confirmed the OTP code had been verified before creating a session -- it trusted a client-submitted email or phone number alone, meaning anyone could log in as any user, including administrators, just by submitting their target's email address. This plugin closes that exact failure mode by construction:
+= Security by design =
+The most dangerous mistake an OTP login can make is a login handler that never actually confirms the OTP code was verified before creating a session -- trusting a client-submitted email or phone number alone (CWE-287, Improper Authentication), which would let anyone log in as any user, including administrators, just by submitting their target's email address. This plugin closes that failure mode by construction:
 
 * A session is created from exactly one place in this plugin's code, reached only after `HDOTP_Repository::verify_and_consume()` has already returned true -- there is no second path, flag, or shortcut that can produce a login.
 * The verification check compares a securely-hashed digest of the submitted code against the stored digest using `hash_equals()` (constant-time, so response timing can't leak how many digits were correct) -- never a plaintext comparison, and never trusting the submitted email by itself.
