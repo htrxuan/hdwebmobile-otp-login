@@ -35,6 +35,9 @@ The most dangerous mistake an OTP login can make is a login handler that never a
 * Email-based codes only in this version -- no SMS/phone verification
 * Does not replace or remove the existing password login; it's offered as an alternative
 
+= Enjoying this plugin? =
+If it helps your site, please consider [leaving an honest review on WordPress.org](https://wordpress.org/support/plugin/hdwebmobile-otp-login/reviews/#new-post) -- it helps other WordPress users find it. Found a problem or have an idea? Please [open a support topic](https://wordpress.org/support/plugin/hdwebmobile-otp-login/) first so it can be fixed.
+
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/hdwebmobile-otp-login` directory, or install the plugin through the WordPress plugins screen directly.
