@@ -4,7 +4,7 @@
  * Plugin Name: HDWebmobile OTP Login
  * Plugin URI: https://hdwebmobile.com/plugins/hdwebmobile-otp-login/
  * Description: Passwordless email one-time-code login and signup for WooCommerce, offered alongside the normal password login. A session is only ever created after a securely-hashed, single-use, rate-limited code is verified with a constant-time comparison -- never by trusting a submitted email or phone number alone.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: htrxuan - Han Tran
  * Author URI: https://hdwebmobile.com/
  * License: GPLv2 or later
@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('HDOTP_VERSION', '1.0.0');
+define('HDOTP_VERSION', '1.0.1');
 define('HDOTP_DB_VERSION', '1.0.0');
 define('HDOTP_PLUGIN_FILE', __FILE__);
 define('HDOTP_PLUGIN_DIR', plugin_dir_path(__FILE__));

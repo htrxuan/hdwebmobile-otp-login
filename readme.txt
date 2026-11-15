@@ -5,7 +5,7 @@ Tags: woocommerce, otp, passwordless login, one time password, 2fa
 Requires at least: 6.9
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -68,6 +68,9 @@ Under WooCommerce > HDWebmobile > OTP Login, uncheck "Enable OTP login" to hide 
 3. The OTP Login settings under WooCommerce > HDWebmobile.
 
 == Changelog ==
+
+= 1.0.1 =
+* The WooCommerce > HDWebmobile Overview page now has a short introduction to Store Guardian, a separate paid plugin that test-buys from your checkout every hour. It is hidden once Store Guardian is active. No changes to this plugin's own features.
 
 = 1.0.0 =
 * Initial release: passwordless email OTP login and signup, hashed single-use time-limited attempt-limited codes, enable/disable setting.
